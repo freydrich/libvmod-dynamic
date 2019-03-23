@@ -28,6 +28,7 @@ varnish v1 -vcl+backend {
 
 	sub vcl_backend_error {
 		set beresp.status = 429;
+		return (deliver);
 	}
 } -start
 
